@@ -11,7 +11,7 @@ func main() {
 	lines, _ := common.ReadLines("input.txt")
 	prev := 0
 	count := 0
-	for _, line := range lines {
+	for _, line := range lines.Slice {
 		num, _ := strconv.Atoi(line)
 		if num > prev {
 			count++

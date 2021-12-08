@@ -9,8 +9,7 @@ import (
 )
 
 func main() {
-	lines, _ := common.ReadLines("input.txt")
-	lineList := common.LineList{Slice: lines}
+	lineList, _ := common.ReadLines("input.txt")
 	draws := strings.Split(lineList.Remove(0), ",")
 	boards := createBoards(lineList.Slice)
 

@@ -10,10 +10,10 @@ type LineList struct {
 }
 
 // ReadLines reads lines from a file into an array
-func ReadLines(path string) ([]string, error) {
+func ReadLines(path string) (LineList, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		return nil, err
+		return LineList{}, err
 	}
 	defer file.Close()
 
@@ -22,7 +22,7 @@ func ReadLines(path string) ([]string, error) {
 	for scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
-	return lines, scanner.Err()
+	return LineList{lines}, scanner.Err()
 }
 
 func (c *LineList) Remove(i int) string {
