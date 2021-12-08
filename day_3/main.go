@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	lines, _ := common.ReadLines("input.txt")
+	l, _ := common.ReadLines("input.txt")
+	lines := l.Slice
 	gamma := ""
 	epsilon := ""
 	for i := 0; i < len(lines[0]); i++ {

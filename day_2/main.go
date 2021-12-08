@@ -13,9 +13,8 @@ func main() {
 
 	depth := 0
 	horizontal := 0
-	for _, line := range lines {
+	for _, line := range lines.Slice {
 		words := strings.Split(line, " ")
-		fmt.Println(words)
 		num, _ := strconv.Atoi(words[1])
 		switch words[0] {
 		case "forward":
